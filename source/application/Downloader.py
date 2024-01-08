@@ -48,6 +48,7 @@ class Download:
             async with self.session.get(url, proxy=self.proxy) as response:
                 suffix = self.__extract_type(
                     response.headers.get("Content-Type", "")) or format_
+                suffix = "mov" if suffix == 'quicktime' else suffix
                 temp = self.temp.joinpath(name)
                 file = path.joinpath(name).with_suffix(f".{suffix}")
                 if self.manager.is_exists(file):
