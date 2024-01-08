@@ -8,16 +8,19 @@ __all__ = ['Settings']
 
 class Settings:
     default = {
-        "path": "",
+        "work_path": "",
         "folder_name": "Download",
         "user_agent": "",
         "cookie": "",
-        "proxy": "",
+        "proxy": None,
         "timeout": 10,
         "chunk": 1024 * 1024,
         "max_retry": 5,
         "record_data": False,
-        "image_format": "webp",
+        "image_format": "PNG",
+        "folder_mode": False,
+        "language": "zh-CN",
+        # "server": False,
     }
     encode = "UTF-8-SIG" if system() == "Windows" else "UTF-8"
 
